@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Login and Registration Form</title>
+		<title th:if="${item.id}">Update Item Details</title>
+    	<title th:unless="${item.id}">Add New Item</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">       
+        <link rel="stylesheet" type="text/css" th:href="@{/css/demo.css}" />
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style3.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/animate-custom.css}" />
+    </head>
+    <body>
+        <div class="container">
+            
+            <header><br><br></header>
+            <section>				
+                <div id="container_demo" >
+                    <div id="wrapper">
+                        <div id="addItem" class="">
+                            <form  action="/items/save" method="post" th:object="${item}"> 
+                                <h1 th:if="${item.id}">Update Item Details</h1>
+    							<h1 th:unless="${item.id}">Add New Item</h1> 
+                                
+                                <input type="hidden" th:field="*{id}">
+                                <p> 
+                                    <label data-icon="u" > Enter Your Name </label>
+                                    <input th:field="*{name}" id="name" name="name" required="required" type="text" placeholder="Name here"/>
+                                </p>
+                                <p> 
+                                    <label data-icon=""> Enter Description </label>
+                                    <input th:field="*{description}" id="desc" name="desc" required="required" type="text" placeholder="eg. X8df!90EO" /> 
+                                </p>
+                                <p> 
+                                    <label data-icon=""> Enter Price </label>
+                                    <input th:field="*{price}" id="price" name="price" required="required" type="number" placeholder="eg. 123***" /> 
+                                </p>
+                       
+                                <p class="login button"> 
+                                    <input type="submit" value="Submit" /> 
+								</p>
+								
+                                <p class="change_link">
+									Not a member yet ?
+									<a href="#toregister" class="to_register">Register</a>
+								</p>
+                            </form>
+                        </div>
+
+                       
+						
+                    </div>
+                </div>  
+            </section>
+        </div>
+    </body>
+</html>
