@@ -59,7 +59,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>spring-boot-docker</finalName>
+		<finalName>spring-boot</finalName>
 	</build>
 
 </project>
