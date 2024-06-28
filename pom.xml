@@ -59,7 +59,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>spring-boot</finalName>
+		<finalName>spring-boot-app</finalName>
 	</build>
 
 </project>
