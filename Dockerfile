@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-slim
-WORKDIR /app
-COPY target/SpringbootApp-0.0.1-SNAPSHOT.jar /app/my-java-app.jar
-CMD ["java", "-jar", "my-java-app.jar"]
+FROM openjdk:17-alpine
+EXPOSE : 8085
+ADD target/spring-boot-docker.jar spring-boot-docker.jar
+ENTRYPOINT ["java", "-jar", "/spring-boot-docker.jar"]
