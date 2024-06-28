@@ -1,4 +1,4 @@
 FROM openjdk:17-alpine
-ADD target/spring-boot-docker.jar spring-boot-docker.jar
+ADD target/spring-boot-app.jar spring-boot-app.jar
 EXPOSE 9095
-ENTRYPOINT ["java", "-jar", "/spring-boot-docker.jar"]
+ENTRYPOINT ["java", "-jar", "/spring-boot-app.jar"]
