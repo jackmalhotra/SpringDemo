@@ -29,7 +29,7 @@ pipeline {
         
         stage('3.Docker Login'){
             steps{
-                withCredentials([usernamePassword(credentialsId: 'dockerhub-Crediential', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                withCredentials([usernamePassword(credentialsId: 'docker-cred', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
                     sh "docker logout"
                     sh "echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin"
                 }
